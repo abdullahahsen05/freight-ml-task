@@ -3,23 +3,180 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Data Quality Findings | Freight Rate ML</title>
+    <title>Quality Findings | Freight Rate ML</title>
     <link rel="stylesheet" href="../assets/viewer.css" />
   </head>
   <body>
     <main class="viewer-shell">
       <header class="viewer-header">
         <div>
-          <p class="eyebrow">EDA note</p>
-          <h1>Data quality findings</h1>
+          <p class="eyebrow">Data audit board</p>
+          <h1>Quality findings</h1>
         </div>
         <nav class="viewer-actions" aria-label="Quality actions">
           <a href="../index.html">Dashboard</a>
-          <a href="../artifacts/eda/data_quality_findings.md" target="_blank" rel="noopener noreferrer">Open raw Markdown</a>
+          <a href="../artifacts/eda/data_audit.json" target="_blank" rel="noopener noreferrer">Audit JSON</a>
         </nav>
       </header>
-      <section class="viewer-card">
-        <iframe class="viewer-frame" src="../artifacts/eda/data_quality_findings.md" title="Data quality findings Markdown"></iframe>
+      <section class="quality-hero" aria-label="Dataset date ranges and row counts">
+        <article>
+          <small>Training set</small>
+          <strong>48,000</strong>
+          <span>rows from Jan 1-Oct 31, 2025</span>
+        </article>
+        <article>
+          <small>Validation set</small>
+          <strong>12,000</strong>
+          <span>rows from Nov 1-Dec 31, 2025</span>
+        </article>
+        <article>
+          <small>Primary risk</small>
+          <strong>Future drift</strong>
+          <span>market index and route mix changed after October</span>
+        </article>
+      </section>
+
+      <section class="quality-grid" aria-label="Visual data quality findings">
+        <article class="quality-panel issue-panel">
+          <div class="panel-title">
+            <p class="eyebrow">Repair log</p>
+            <h2>Missing and invalid fields</h2>
+          </div>
+          <div class="bar-list">
+            <div class="bar-row">
+              <div>
+                <strong>Training weight missing</strong>
+                <span>300 rows, 0.63%</span>
+              </div>
+              <i style="--w: 80%"></i>
+            </div>
+            <div class="bar-row">
+              <div>
+                <strong>Training market index missing</strong>
+                <span>374 rows, 0.78%</span>
+              </div>
+              <i style="--w: 100%"></i>
+            </div>
+            <div class="bar-row">
+              <div>
+                <strong>Validation weight missing</strong>
+                <span>165 rows, 1.38%</span>
+              </div>
+              <i style="--w: 44%"></i>
+            </div>
+            <div class="bar-row">
+              <div>
+                <strong>Validation market index missing</strong>
+                <span>249 rows, 2.08%</span>
+              </div>
+              <i style="--w: 67%"></i>
+            </div>
+          </div>
+          <p class="quality-note">
+            Addressed with median imputation plus explicit missingness flags inside the feature pipeline.
+          </p>
+        </article>
+
+        <article class="quality-panel">
+          <div class="panel-title">
+            <p class="eyebrow">Weight audit</p>
+            <h2>Negative values</h2>
+          </div>
+          <div class="split-stat">
+            <div>
+              <strong>292</strong>
+              <span>train rows</span>
+            </div>
+            <div>
+              <strong>145</strong>
+              <span>validation rows</span>
+            </div>
+          </div>
+          <p class="quality-note">
+            Benchmarked absolute-value repair against treating negative weights as missing. The selected model uses absolute-value repair and keeps a negative-weight flag.
+          </p>
+        </article>
+
+        <article class="quality-panel route-panel">
+          <div class="panel-title">
+            <p class="eyebrow">Future coverage</p>
+            <h2>Unseen geography</h2>
+          </div>
+          <div class="route-meter" aria-label="736 unseen validation routes">
+            <span style="--w: 17.46%"></span>
+          </div>
+          <div class="route-stats">
+            <div>
+              <strong>8</strong>
+              <span>new cities</span>
+            </div>
+            <div>
+              <strong>736</strong>
+              <span>new routes</span>
+            </div>
+            <div>
+              <strong>4,214</strong>
+              <span>validation routes</span>
+            </div>
+          </div>
+          <p class="quality-note">
+            Unknown-safe categorical encoders and frequency features reduce reliance on memorized route IDs.
+          </p>
+        </article>
+
+        <article class="quality-panel market-panel">
+          <div class="panel-title">
+            <p class="eyebrow">Distribution shift</p>
+            <h2>Market index moved lower</h2>
+          </div>
+          <div class="market-compare">
+            <div>
+              <span>Train mean</span>
+              <i style="--h: 100%"></i>
+              <strong>1.083</strong>
+            </div>
+            <div>
+              <span>Validation mean</span>
+              <i style="--h: 86%"></i>
+              <strong>0.927</strong>
+            </div>
+          </div>
+          <p class="quality-note">
+            Chronological validation was used because future market conditions differ from the labeled months.
+          </p>
+        </article>
+
+        <article class="quality-panel tail-panel">
+          <div class="panel-title">
+            <p class="eyebrow">Target behavior</p>
+            <h2>Right-skewed rates</h2>
+          </div>
+          <div class="tail-track">
+            <span class="q50">Median $2,031</span>
+            <span class="q95">P95 $4,954</span>
+            <span class="q99">P99 $5,973</span>
+            <span class="max">Max $25,533</span>
+          </div>
+          <p class="quality-note">
+            MAE is the primary selection metric. RMSE, WAPE, residuals, and tail errors are reported as diagnostics.
+          </p>
+        </article>
+
+        <article class="quality-panel december-panel">
+          <div class="panel-title">
+            <p class="eyebrow">December chart</p>
+            <h2>Separate feature contract</h2>
+          </div>
+          <div class="contract-list">
+            <span>31 fixed lane rows</span>
+            <span>no market_index</span>
+            <span>no quote_signal</span>
+            <span>city coordinates enriched</span>
+          </div>
+          <p class="quality-note">
+            A chart-compatible model excludes unavailable fields and is backtested under that same constraint.
+          </p>
+        </article>
       </section>
     </main>
   </body>
