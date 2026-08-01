@@ -33,7 +33,7 @@ def package_versions() -> dict[str, str]:
 def generate_report(root: Path) -> Path:
     reports = root / "reports"
     reports.mkdir(parents=True, exist_ok=True)
-    output = reports / "freight_rate_assessment_report.pdf"
+    output = reports / "freight-ml-task report.pdf"
     styles = getSampleStyleSheet()
     doc = SimpleDocTemplate(str(output), pagesize=letter, rightMargin=0.55 * inch, leftMargin=0.55 * inch, topMargin=0.55 * inch, bottomMargin=0.55 * inch)
     elements = []

@@ -73,7 +73,7 @@ def test_scorer_when_outputs_present():
 
 def test_report_and_chart_when_present():
     chart = ROOT / "scorer_results" / "candidate_december.png"
-    report = ROOT / "reports" / "freight_rate_assessment_report.pdf"
+    report = ROOT / "reports" / "freight-ml-task report.pdf"
     if chart.exists():
         assert chart.stat().st_size > 1000
     if report.exists():

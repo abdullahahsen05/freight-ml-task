@@ -21,7 +21,7 @@ def main() -> None:
     validate_final_december(root / "december_chart_inputs.csv")
     required = [
         root / "scorer_results" / "candidate_december.png",
-        root / "reports" / "freight_rate_assessment_report.pdf",
+        root / "reports" / "freight-ml-task report.pdf",
         root / "artifacts" / "metrics" / "model_rankings.csv",
         root / "artifacts" / "eda" / "data_audit.json",
         root / "README.md",
