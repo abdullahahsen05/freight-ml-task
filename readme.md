@@ -2,6 +2,8 @@
 
 This repository contains a complete, reproducible solution for the Spotter freight-rate ML assessment.
 
+GitHub repository: <https://github.com/abdullahahsen05/torre>
+
 ## Outputs
 
 - `validation_predictions.csv`: 12,000 final validation predictions with `load_id,predicted_rate`.
@@ -53,7 +55,6 @@ The final hidden validation score is not available locally and is not claimed he
 
 ## Human-Only Submission Steps
 
-1. Publish or push this repository to an accessible GitHub URL.
-2. Record the 2-3 minute Loom using `reports/LOOM_SCRIPT.md`.
-3. Paste the Loom URL in the checklist or submission form.
-4. Submit the repository, prediction CSV, report, and Loom link.
+1. Record the 2-3 minute Loom using `reports/LOOM_SCRIPT.md`.
+2. Paste the Loom URL in the checklist or submission form.
+3. Submit the repository, prediction CSV, report, and Loom link.

@@ -2,6 +2,8 @@
 
 All locally achievable phases in `PHASES.md` are complete.
 
+GitHub repository: https://github.com/abdullahahsen05/torre
+
 ## Selected Models
 
 - Full validation model: `hgb_mae_full_abs_weight`
@@ -61,11 +63,10 @@ STDERR:
 ## Honest Limitations
 
 - Hidden validation targets are not supplied, so no hidden validation metric is claimed.
-- The Loom video and GitHub publication require external human/account actions.
+- The Loom video requires external human recording/upload.
 
 ## Remaining Human-Only Actions
 
-- Publish or push the repository to an accessible GitHub URL.
 - Record the Loom walkthrough.
 - Add the Loom URL.
 - Submit the assessment.
