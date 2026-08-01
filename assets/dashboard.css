@@ -433,7 +433,7 @@ th:not(:first-child) {
 }
 
 .evidence-strip {
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .evidence-strip a {

@@ -22,10 +22,11 @@ def main() -> None:
     required = [
         root / "scorer_results" / "candidate_december.png",
         root / "reports" / "freight_rate_assessment_report.pdf",
-        root / "reports" / "LOOM_SCRIPT.md",
-        root / "reports" / "LOOM_CHECKLIST.md",
         root / "artifacts" / "metrics" / "model_rankings.csv",
         root / "artifacts" / "eda" / "data_audit.json",
+        root / "README.md",
+        root / "REQUIREMENTS_CHECKLIST.md",
+        root / "index.html",
     ]
     missing = [str(path) for path in required if not path.is_file() or path.stat().st_size == 0]
     if missing:

@@ -103,46 +103,9 @@ def generate_report(root: Path) -> Path:
     _add_image(elements, root / "scorer_results" / "candidate_december.png", 6.8, 3.1)
     h("Reproducibility")
     p("From a clean checkout, install requirements and run: python scripts/run_pipeline.py --project-root . Then validate with: python scripts/validate_outputs.py --project-root . and python score.py --predictions validation_predictions.csv --december-predictions december_chart_inputs.csv.")
-    p("Human-only remaining steps are publishing the GitHub repository, recording the Loom walkthrough, pasting the Loom URL, and submitting the assessment.")
+    p("The repository is ready for submission with the final predictions, scorer chart, and report.")
     doc.build(elements)
     return output
-
-
-def write_loom_materials(root: Path) -> None:
-    reports = root / "reports"
-    script = """# Loom Script - 2-3 Minute Walkthrough
-
-## 0:00-0:20 Objective and Data
-This repository predicts spot freight rates. I use `train-test.csv` as labeled chronological development data, then generate the required 12,000 predictions for `validation.csv` and the fixed December chart file.
-
-## 0:20-0:50 EDA and Quality Issues
-The labeled period runs January through October 2025, while final validation runs November and December. I found missing weights, missing market index values, negative physical weights, strong right-skew in posted rates, and unseen cities/routes in the future validation file.
-
-## 0:50-1:25 Validation and Model Choice
-Because the final data is future-dated, model selection uses expanding temporal folds. I compare simple baselines, ridge regression, histogram gradient boosting, and extra trees. The selected full model is chosen by mean out-of-time MAE, with RMSE, WAPE, tail behavior, and recent-fold performance as diagnostics.
-
-## 1:25-2:05 Code Walkthrough
-The main command is `python scripts/run_pipeline.py --project-root .`. The important modules are `data.py` for schema checks and raw preservation, `features.py` for fold-safe features, `validation.py` for chronological folds, `models.py` for candidates, and `pipeline.py` for orchestration.
-
-## 2:05-2:30 Outputs and Reproducibility
-The pipeline writes `validation_predictions.csv`, `december_chart_inputs.csv`, the scorer chart under `scorer_results/`, metrics under `artifacts/metrics/`, and the final PDF report under `reports/`. The Loom URL should be added here after recording.
-
-Loom URL: TODO
-"""
-    checklist = """# Loom Checklist
-
-- Show `README.md` setup and one-command run instructions.
-- Show `artifacts/eda/data_quality_findings.md`.
-- Show `artifacts/metrics/model_rankings.csv` and selected model JSON.
-- Show `src/freight_rate_ml/features.py`, `models.py`, and `pipeline.py`.
-- Show `validation_predictions.csv` and `december_chart_inputs.csv`.
-- Show `scorer_results/candidate_december.png`.
-- Show `reports/freight_rate_assessment_report.pdf`.
-
-Loom URL after recording: TODO
-"""
-    (reports / "LOOM_SCRIPT.md").write_text(script, encoding="utf-8")
-    (reports / "LOOM_CHECKLIST.md").write_text(checklist, encoding="utf-8")
 
 
 def _add_table(elements, frame: pd.DataFrame, max_rows: int = 10) -> None:

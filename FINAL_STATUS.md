@@ -51,8 +51,6 @@ STDERR:
 - `december_chart_inputs.csv`: 1,985 bytes, sha256 `b1e911be8329daa4d2fd6723c7cf07d63b0dac9fb147a6f559584b98ac959766`
 - `scorer_results/candidate_december.png`: 105,003 bytes, sha256 `f2dbcb66b08277bcf98bafc5af742d0811b420fd6c3da903b6127012006f7164`
 - `reports/freight_rate_assessment_report.pdf`: 383,631 bytes, sha256 `1141bbb4f8b912df95e1f11a6371e11db59467e69e47e104b71dd3d597c174d0`
-- `reports/LOOM_SCRIPT.md`: 1,604 bytes, sha256 `dab69d7e0406d194a040f629a7aebd8ebf127babb64068ddf9017f40eb4f0c4f`
-- `reports/LOOM_CHECKLIST.md`: 484 bytes, sha256 `31915fdabecfb4bd98e1f11aac3a4942afc93abeb2e81caa3fba7acfaf13a130`
 - `artifacts/models/final_full_model.joblib`: 1,621,090 bytes, sha256 `dd1596fcf7f87e4ec0c01a2dece9cfe3b73ce94037cd99be0f51a068eafa3dc5`
 - `artifacts/models/final_december_model.joblib`: 1,610,194 bytes, sha256 `0041411ed2c13dbe1e14dc417ceddce034525f7d34f59b75a6efa9f70f07a61f`
 
@@ -63,10 +61,7 @@ STDERR:
 ## Honest Limitations
 
 - Hidden validation targets are not supplied, so no hidden validation metric is claimed.
-- The Loom video requires external human recording/upload.
 
-## Remaining Human-Only Actions
+## Remaining Human Actions
 
-- Record the Loom walkthrough.
-- Add the Loom URL.
 - Submit the assessment.
