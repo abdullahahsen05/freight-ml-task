@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-08-01T00:10:19.912483+00:00",
+  "seed": 42,
+  "prediction_floor": 126.0349,
+  "validation_prediction_summary": {
+    "count": 12000.0,
+    "mean": 2345.740994527369,
+    "std": 1347.2563062644863,
+    "min": 236.30907639867237,
+    "25%": 1273.8566355993262,
+    "50%": 2025.172311870947,
+    "75%": 3339.0025518582943,
+    "max": 6185.199167692491
+  },
+  "december_prediction_summary": {
+    "count": 31.0,
+    "mean": 819.3036902802193,
+    "std": 6.674893311780677,
+    "min": 803.3566805751683,
+    "25%": 813.039557735668,
+    "50%": 819.248849528731,
+    "75%": 825.1029496821759,
+    "max": 828.6413643388845
+  },
+  "input_manifest": {
+    "CONTEXT.md": {
+      "size": 16237,
+      "sha256": "7e95be8b20234707aac2bb7f7ca8bf06dc68316b279e46082c0bc919060fe1d2"
+    },
+    "PLAN.md": {
+      "size": 19942,
+      "sha256": "9f5fcdbabb07e2c709524bac9953ced264d06b1ff814fa2add596990d7856b92"
+    },
+    "PHASES.md": {
+      "size": 12137,
+      "sha256": "5d7f7f54f1290f390d9a6a75a51df80334594964029b00e69c36fd86047d154d"
+    },
+    "freight-rate-ml-assessment.pdf": {
+      "size": 118109,
+      "sha256": "26c30f73c44fa6306c7bd2b8aa1dfc04b34ab044f6d122b2e6ccd634184ffd69"
+    },
+    "readme.md": {
+      "size": 2602,
+      "sha256": "a2a4f20fa4b0dcdb620a06c1d989bb3b3a6b6a4dfed21db474dc627de6680616"
+    },
+    "score.py": {
+      "size": 6492,
+      "sha256": "8da8b6bf3e39078f34c9998d14dcca4f7aa64ad5ddea1ce4449cd362168d2a28"
+    },
+    "requirements.txt": {
+      "size": 142,
+      "sha256": "3dc3fa97627e3a33891014c810259c81210bcf12d378929041926cd4247d1d99"
+    },
+    "train-test.csv": {
+      "size": 5962834,
+      "sha256": "892980fd20bac7ac0ca4ec31d3981fca48d52dec88e4f02642ab955f1efb40fe"
+    },
+    "validation.csv": {
+      "size": 1393399,
+      "sha256": "f6cdc7c367b397b90b319fc7ad30fd0e1893fd6a714816dda54c303b0fe71151"
+    },
+    "validation-predictions-template.csv": {
+      "size": 132023,
+      "sha256": "79de15adabcf807b8636b9b47ebe964d451fbcb343056c44a2c4b54a219891c6"
+    },
+    "december-chart-inputs.csv": {
+      "size": 1643,
+      "sha256": "d4a0cba969e315eae3c967268914960547dc6589568e07bf6182551bdc267e6e"
+    }
+  },
+  "package_versions": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "3.0.3",
+    "numpy": "2.5.1",
+    "sklearn": "1.9.0",
+    "matplotlib": "3.11.1",
+    "reportlab": "5.0.0",
+    "git_commit": "not a git repository"
+  }
+}
