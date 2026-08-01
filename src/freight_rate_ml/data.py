@@ -39,9 +39,6 @@ def sha256_file(path: Path) -> str:
 
 def inventory_files(root: Path, output: Path) -> dict[str, dict[str, object]]:
     names = [
-        "CONTEXT.md",
-        "PLAN.md",
-        "PHASES.md",
         "freight-rate-ml-assessment.pdf",
         "README.md",
         "score.py",
@@ -54,8 +51,6 @@ def inventory_files(root: Path, output: Path) -> dict[str, dict[str, object]]:
     manifest: dict[str, dict[str, object]] = {}
     for name in names:
         path = root / name
-        if not path.is_file() and name == "README.md":
-            path = root / "readme.md"
         if not path.is_file():
             raise FileNotFoundError(path)
         manifest[path.name] = {"size": path.stat().st_size, "sha256": sha256_file(path)}

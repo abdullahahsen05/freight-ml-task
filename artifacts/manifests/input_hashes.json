@@ -1,23 +1,11 @@
 {
-  "CONTEXT.md": {
-    "size": 16237,
-    "sha256": "7e95be8b20234707aac2bb7f7ca8bf06dc68316b279e46082c0bc919060fe1d2"
-  },
-  "PLAN.md": {
-    "size": 19942,
-    "sha256": "9f5fcdbabb07e2c709524bac9953ced264d06b1ff814fa2add596990d7856b92"
-  },
-  "PHASES.md": {
-    "size": 12137,
-    "sha256": "5d7f7f54f1290f390d9a6a75a51df80334594964029b00e69c36fd86047d154d"
-  },
   "freight-rate-ml-assessment.pdf": {
     "size": 118109,
     "sha256": "26c30f73c44fa6306c7bd2b8aa1dfc04b34ab044f6d122b2e6ccd634184ffd69"
   },
-  "readme.md": {
-    "size": 2602,
-    "sha256": "a2a4f20fa4b0dcdb620a06c1d989bb3b3a6b6a4dfed21db474dc627de6680616"
+  "README.md": {
+    "size": 4610,
+    "sha256": "02231bc496b8a678f9c54da241a445b368fe065d430810f6d7ea55e8f270646f"
   },
   "score.py": {
     "size": 6492,

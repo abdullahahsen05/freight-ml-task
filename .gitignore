@@ -8,3 +8,5 @@ venv/
 *.egg-info/
 tmp/
 private/
+data/raw/
+artifacts/manifests/run_status.log
