@@ -3,6 +3,7 @@
 ## Local Status
 
 - [x] Public GitHub repository created: https://github.com/abdullahahsen05/torre
+- [x] Local dashboard created at `index.html`
 - [x] Raw inputs preserved under `data/raw/`
 - [x] Full reproducible pipeline implemented in `src/freight_rate_ml/`
 - [x] One-command reproduction available: `python scripts/run_pipeline.py --project-root .`
@@ -43,6 +44,7 @@
 ## Quick Manual Test Checklist
 
 - [ ] Open `README.md` and confirm the GitHub URL and commands are visible
+- [ ] Open `http://127.0.0.1:8000/` and confirm the dashboard loads
 - [ ] Open `validation_predictions.csv` and verify two columns and 12,000 rows
 - [ ] Open `december_chart_inputs.csv` and verify 31 December rows
 - [ ] Open `scorer_results/candidate_december.png` and confirm the chart is readable
