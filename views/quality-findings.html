@@ -36,6 +36,41 @@
         </article>
       </section>
 
+      <section class="issue-flow" aria-label="Data quality issues and fixes">
+        <div class="section-title">
+          <p class="eyebrow">Issue handling</p>
+          <h2>What was found and how it was addressed</h2>
+        </div>
+        <article>
+          <span class="issue-badge">Missing</span>
+          <strong>Weight and market index gaps</strong>
+          <p>Found in both training and validation rows.</p>
+          <i></i>
+          <b>Median imputation plus missingness flags</b>
+        </article>
+        <article>
+          <span class="issue-badge">Invalid</span>
+          <strong>Negative physical weights</strong>
+          <p>292 train rows and 145 validation rows.</p>
+          <i></i>
+          <b>Benchmarked abs repair vs. missing repair</b>
+        </article>
+        <article>
+          <span class="issue-badge">Unseen</span>
+          <strong>New cities and routes</strong>
+          <p>8 unseen cities and 736 unseen validation routes.</p>
+          <i></i>
+          <b>Unknown-safe encoders plus frequency features</b>
+        </article>
+        <article>
+          <span class="issue-badge">Contract</span>
+          <strong>December file lacks market fields</strong>
+          <p>No market_index or quote_signal in chart rows.</p>
+          <i></i>
+          <b>Separate chart-compatible model</b>
+        </article>
+      </section>
+
       <section class="quality-grid" aria-label="Visual data quality findings">
         <article class="quality-panel issue-panel">
           <div class="panel-title">
