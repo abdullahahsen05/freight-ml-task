@@ -1,4 +1,4 @@
-# Freight Rate ML Pipeline
+﻿# Freight Rate ML Pipeline
 
 ![Python](https://img.shields.io/badge/Python-3.12-0B5C62?style=for-the-badge&logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9-F1B51C?style=for-the-badge&logo=scikitlearn&logoColor=111)
@@ -8,7 +8,7 @@
 
 A reproducible machine-learning project for predicting spot freight rates from historical load data. The repository includes data validation, EDA, temporal model comparison, final predictions, a scorer-generated December chart, a PDF report, and a local dashboard for reviewing the submission package.
 
-GitHub: <https://github.com/abdullahahsen05/torre>
+GitHub: <https://github.com/abdullahahsen05/freight-ml-task>
 
 ## Goal
 
@@ -24,7 +24,7 @@ The task is complete locally and ready for submission.
 - Automated tests: `7 passed`
 - Local dashboard: `index.html`
 - Final report: `reports/freight_rate_assessment_report.pdf`
-- Public GitHub repo: <https://github.com/abdullahahsen05/torre>
+- Public GitHub repo: <https://github.com/abdullahahsen05/freight-ml-task>
 
 ## Results Snapshot
 

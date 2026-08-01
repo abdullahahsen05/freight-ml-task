@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import json
@@ -247,7 +247,7 @@ def _write_final_readme(root: Path, selection: dict) -> None:
 
 A reproducible machine-learning project for predicting spot freight rates from historical load data. The repository includes data validation, EDA, temporal model comparison, final predictions, a scorer-generated December chart, a PDF report, and a local dashboard for reviewing the submission package.
 
-GitHub: <https://github.com/abdullahahsen05/torre>
+GitHub: <https://github.com/abdullahahsen05/freight-ml-task>
 
 ## Goal
 
@@ -263,7 +263,7 @@ The task is complete locally and ready for submission.
 - Automated tests: `7 passed`
 - Local dashboard: `index.html`
 - Final report: `reports/freight_rate_assessment_report.pdf`
-- Public GitHub repo: <https://github.com/abdullahahsen05/torre>
+- Public GitHub repo: <https://github.com/abdullahahsen05/freight-ml-task>
 
 ## Results Snapshot
 

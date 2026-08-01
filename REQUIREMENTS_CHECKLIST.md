@@ -1,8 +1,8 @@
-# Requirements Checklist
+﻿# Requirements Checklist
 
 ## Local Status
 
-- [x] Public GitHub repository created: https://github.com/abdullahahsen05/torre
+- [x] Public GitHub repository created: https://github.com/abdullahahsen05/freight-ml-task
 - [x] Local dashboard created at `index.html`
 - [x] Raw inputs preserved under `data/raw/`
 - [x] Full reproducible pipeline implemented in `src/freight_rate_ml/`

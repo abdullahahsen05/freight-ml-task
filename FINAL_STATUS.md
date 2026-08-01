@@ -1,8 +1,8 @@
-# Final Status
+﻿# Final Status
 
 All locally achievable phases in `PHASES.md` are complete.
 
-GitHub repository: https://github.com/abdullahahsen05/torre
+GitHub repository: https://github.com/abdullahahsen05/freight-ml-task
 
 ## Selected Models
 

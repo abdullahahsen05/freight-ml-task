@@ -1,4 +1,4 @@
-# Status
+﻿# Status
 
 - 2026-08-01T00:07:03.619902+00:00: Started pipeline; Phase 0 in progress.
 - 2026-08-01T00:07:04.248195+00:00: Phase 0 complete. Phase 1 in progress.
@@ -17,4 +17,4 @@
 - 2026-08-01T00:10:21.000000+00:00: Phase 8 complete. README, tests, output validator, scorer rerun, and repository hardening gates passed.
 - 2026-08-01T00:10:22.000000+00:00: Phase 9 complete. Final audit, hashes, artifact inspection, and FINAL_STATUS.md completed.
 - 2026-08-01T00:10:20.779018+00:00: All phases complete. See FINAL_STATUS.md.
-- 2026-08-01T00:19:00.000000+00:00: Published GitHub repository at https://github.com/abdullahahsen05/torre.
+- 2026-08-01T00:19:00.000000+00:00: Published GitHub repository at https://github.com/abdullahahsen05/freight-ml-task.
