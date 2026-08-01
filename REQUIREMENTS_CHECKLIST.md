@@ -43,7 +43,7 @@
 
 ## Quick Manual Test Checklist
 
-- [ ] Open `README.md` and confirm the GitHub URL and commands are visible
+- [ ] Open `README.md` and confirm the badges, goal, status, GitHub URL, and commands are visible
 - [ ] Open `http://127.0.0.1:8000/` and confirm the dashboard loads
 - [ ] Open `validation_predictions.csv` and verify two columns and 12,000 rows
 - [ ] Open `december_chart_inputs.csv` and verify 31 December rows

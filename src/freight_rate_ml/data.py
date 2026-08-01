@@ -43,7 +43,7 @@ def inventory_files(root: Path, output: Path) -> dict[str, dict[str, object]]:
         "PLAN.md",
         "PHASES.md",
         "freight-rate-ml-assessment.pdf",
-        "readme.md",
+        "README.md",
         "score.py",
         "requirements.txt",
         "train-test.csv",
@@ -54,9 +54,11 @@ def inventory_files(root: Path, output: Path) -> dict[str, dict[str, object]]:
     manifest: dict[str, dict[str, object]] = {}
     for name in names:
         path = root / name
+        if not path.is_file() and name == "README.md":
+            path = root / "readme.md"
         if not path.is_file():
             raise FileNotFoundError(path)
-        manifest[name] = {"size": path.stat().st_size, "sha256": sha256_file(path)}
+        manifest[path.name] = {"size": path.stat().st_size, "sha256": sha256_file(path)}
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     return manifest
