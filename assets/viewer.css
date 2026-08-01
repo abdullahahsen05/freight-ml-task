@@ -1,0 +1,119 @@
+:root {
+  --asphalt: #171a18;
+  --paper: #f4f6ef;
+  --panel: #fffdf6;
+  --line: #cfd8cf;
+  --teal: #064a56;
+  --amber: #f1b51c;
+  --rust: #a3422c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--asphalt);
+  background:
+    linear-gradient(90deg, rgba(23, 26, 24, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(23, 26, 24, 0.035) 1px, transparent 1px),
+    var(--paper);
+  background-size: 44px 44px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.viewer-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 40px;
+}
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: end;
+  padding: 22px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 78% 20%, rgba(241, 181, 28, 0.24), transparent 28%),
+    linear-gradient(135deg, #006b68, #172019);
+  border-radius: 22px;
+  box-shadow: 0 22px 60px rgba(23, 26, 24, 0.16);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--amber);
+  font-family: Consolas, "SFMono-Regular", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 6vw, 4.8rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.viewer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.viewer-actions a {
+  padding: 10px 13px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.viewer-card {
+  margin-top: 18px;
+  padding: 18px;
+  background: rgba(255, 253, 246, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 12px 34px rgba(23, 26, 24, 0.08);
+}
+
+.viewer-frame {
+  width: 100%;
+  min-height: 76vh;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.image-frame {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+@media (max-width: 720px) {
+  .viewer-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .viewer-frame {
+    min-height: 70vh;
+  }
+}
