@@ -177,9 +177,12 @@ h2 {
 .quick-actions,
 .evidence-strip {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 14px;
   margin-top: 18px;
+}
+
+.quick-actions {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .quick-actions a,
