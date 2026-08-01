@@ -1,0 +1,6 @@
+{
+  "full_model": "hgb_mae_full_abs_weight",
+  "december_model": "december_hgb_mae_abs_weight",
+  "selection_metric": "mean temporal MAE",
+  "seed": 42
+}

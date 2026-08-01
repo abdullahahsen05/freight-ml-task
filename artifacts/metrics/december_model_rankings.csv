@@ -1,0 +1,5 @@
+model,mean_mae,recent_mae
+december_hgb_mae_abs_weight,115.88734402615304,114.83187813531208
+december_extra_trees_abs_weight,175.17881413093372,140.85895198244629
+december_ridge_log_abs_weight,212.8916513381781,275.5723631758285
+december_equipment_median_rpm,227.68507359380322,229.09657316845033
