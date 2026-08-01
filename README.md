@@ -109,7 +109,3 @@ Model selection is based on mean temporal MAE, with RMSE, WAPE, recent-fold perf
 |-- validation_predictions.csv
 `-- december_chart_inputs.csv
 ```
-
-## Submission
-
-Submit the GitHub repo, prediction CSV, and report.
