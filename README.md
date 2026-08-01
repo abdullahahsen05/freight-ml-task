@@ -4,9 +4,9 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9-F1B51C?style=for-the-badge&logo=scikitlearn&logoColor=111)
 ![Tests](https://img.shields.io/badge/tests-7%20passing-178A63?style=for-the-badge)
 ![Scorer](https://img.shields.io/badge/supplied%20scorer-passing-064A56?style=for-the-badge)
-![Status](https://img.shields.io/badge/status-submission%20ready-A3422C?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-complete-A3422C?style=for-the-badge)
 
-A reproducible machine-learning project for predicting spot freight rates from historical load data. The repository includes data validation, EDA, temporal model comparison, final predictions, a scorer-generated December chart, a PDF report, and a local dashboard for reviewing the submission package.
+A reproducible machine-learning project for predicting spot freight rates from historical load data. The repository includes data validation, EDA, chronological model comparison, final predictions, a scorer-generated December chart, a PDF report, and a local dashboard for reviewing the project artifacts.
 
 GitHub: <https://github.com/abdullahahsen05/freight-ml-task>
 
@@ -14,7 +14,7 @@ GitHub: <https://github.com/abdullahahsen05/freight-ml-task>
 
 Predict future freight load rates with an auditable pipeline that can be run from a clean checkout. The project trains on labeled January-October 2025 loads, validates chronologically, predicts the hidden November-December validation set, and separately predicts a fixed December lane scenario.
 
-The task is complete locally and ready for submission.
+The final report, prediction files, scorer chart, metrics, and visual review pages are generated and checked locally.
 
 ## What Is Working
 
@@ -54,7 +54,20 @@ Open:
 http://127.0.0.1:8000/
 ```
 
-The dashboard links to the report, scorer chart, final CSVs, checklist, model rankings, and validation folds.
+The dashboard gives one-click access to the final report, scorer chart, prediction CSVs, data-quality visuals, chronological validation folds, model leaderboard, run manifest, and GitHub repository.
+
+## Visual Review Pages
+
+The dashboard links to these focused pages:
+
+| Page | Purpose |
+|---|---|
+| `views/report.html` | Opens `reports/freight-ml-task report.pdf` |
+| `views/quality-findings.html` | Visual data audit with issue-and-fix cards |
+| `views/folds.html` | Chronological validation split timeline |
+| `views/model-rankings.html` | Model leaderboard and selected-model rationale |
+| `views/december-chart.html` | Scorer-generated fixed December chart |
+| `views/validation-predictions.html` | Final 12,000-row prediction file |
 
 ## Quick Start
 
@@ -97,6 +110,8 @@ Model selection is based on mean temporal MAE, with RMSE, WAPE, recent-fold perf
 ```text
 .
 |-- index.html                         # Local review dashboard
+|-- assets/                            # Dashboard and viewer styles
+|-- views/                             # Visual artifact viewer pages
 |-- src/freight_rate_ml/               # Data, features, models, pipeline, reporting
 |-- scripts/                           # CLI entry points
 |-- tests/                             # Automated tests
