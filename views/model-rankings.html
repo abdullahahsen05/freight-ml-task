@@ -10,16 +10,122 @@
     <main class="viewer-shell">
       <header class="viewer-header">
         <div>
-          <p class="eyebrow">Metrics CSV</p>
-          <h1>Model rankings</h1>
+          <p class="eyebrow">Model choice board</p>
+          <h1>Temporal leaderboard</h1>
         </div>
         <nav class="viewer-actions" aria-label="Ranking actions">
           <a href="../index.html">Dashboard</a>
+          <a href="../artifacts/metrics/selected_model.json" target="_blank" rel="noopener noreferrer">Selection JSON</a>
           <a href="../artifacts/metrics/model_rankings.csv" target="_blank" rel="noopener noreferrer">Open raw CSV</a>
         </nav>
       </header>
-      <section class="viewer-card">
-        <iframe class="viewer-frame" src="../artifacts/metrics/model_rankings.csv" title="Model rankings CSV"></iframe>
+
+      <section class="model-choice-hero" aria-label="Selected model summary">
+        <article class="winner-card">
+          <small>Selected full model</small>
+          <strong>hgb_mae_full_abs_weight</strong>
+          <span>Histogram gradient boosting selected by mean chronological MAE.</span>
+        </article>
+        <article>
+          <small>Mean temporal MAE</small>
+          <strong>123.973</strong>
+          <span>lowest across the compared candidates</span>
+        </article>
+        <article>
+          <small>Mean WAPE</small>
+          <strong>5.20%</strong>
+          <span>out-of-time validation folds</span>
+        </article>
+        <article>
+          <small>Recent-fold MAE</small>
+          <strong>121.005</strong>
+          <span>October holdout performance</span>
+        </article>
+      </section>
+
+      <section class="model-reasoning" aria-label="Model selection reasoning">
+        <article>
+          <span class="reason-tag">Why not random?</span>
+          <p>Final predictions are future-dated, so model choice uses out-of-time folds instead of random splits.</p>
+        </article>
+        <article>
+          <span class="reason-tag">Why HGB?</span>
+          <p>It handled nonlinear lane, equipment, market, route, and calendar effects better than linear and tree baselines.</p>
+        </article>
+        <article>
+          <span class="reason-tag">How selected?</span>
+          <p>Mean temporal MAE was primary; RMSE, WAPE, recent-fold MAE, and stability were diagnostics.</p>
+        </article>
+      </section>
+
+      <section class="leaderboard" aria-label="Model leaderboard by mean temporal MAE">
+        <div class="section-title">
+          <p class="eyebrow">Lower is better</p>
+          <h2>Compared model families</h2>
+        </div>
+        <article class="model-row selected">
+          <div>
+            <small>01</small>
+            <strong>Histogram gradient boosting</strong>
+            <span>absolute-error loss, abs weight repair</span>
+          </div>
+          <i style="--w: 11%"></i>
+          <b>123.973 MAE</b>
+        </article>
+        <article class="model-row">
+          <div>
+            <small>02</small>
+            <strong>Histogram gradient boosting</strong>
+            <span>negative weights treated as missing</span>
+          </div>
+          <i style="--w: 11%"></i>
+          <b>124.281 MAE</b>
+        </article>
+        <article class="model-row">
+          <div>
+            <small>03</small>
+            <strong>Extra trees</strong>
+            <span>tree ensemble baseline</span>
+          </div>
+          <i style="--w: 14%"></i>
+          <b>164.837 MAE</b>
+        </article>
+        <article class="model-row">
+          <div>
+            <small>04</small>
+            <strong>Ridge regression</strong>
+            <span>log target, full feature set</span>
+          </div>
+          <i style="--w: 16%"></i>
+          <b>185.254 MAE</b>
+        </article>
+        <article class="model-row">
+          <div>
+            <small>05</small>
+            <strong>Distance linear</strong>
+            <span>simple distance-only baseline</span>
+          </div>
+          <i style="--w: 17%"></i>
+          <b>194.338 MAE</b>
+        </article>
+        <article class="model-row">
+          <div>
+            <small>06</small>
+            <strong>Equipment median RPM</strong>
+            <span>equipment-level rate-per-mile baseline</span>
+          </div>
+          <i style="--w: 20%"></i>
+          <b>227.685 MAE</b>
+        </article>
+        <article class="model-row baseline">
+          <div>
+            <small>07</small>
+            <strong>Global median</strong>
+            <span>naive fallback baseline</span>
+          </div>
+          <i style="--w: 100%"></i>
+          <b>1140.511 MAE</b>
+        </article>
       </section>
     </main>
   </body>

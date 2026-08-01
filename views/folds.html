@@ -10,7 +10,7 @@
     <main class="viewer-shell">
       <header class="viewer-header">
         <div>
-          <p class="eyebrow">Temporal split</p>
+          <p class="eyebrow">Temporal split board</p>
           <h1>Validation folds</h1>
         </div>
         <nav class="viewer-actions" aria-label="Fold actions">
@@ -18,8 +18,97 @@
           <a href="../artifacts/metrics/folds.csv" target="_blank" rel="noopener noreferrer">Open raw CSV</a>
         </nav>
       </header>
-      <section class="viewer-card">
-        <iframe class="viewer-frame" src="../artifacts/metrics/folds.csv" title="Validation folds CSV"></iframe>
+
+      <section class="fold-principles" aria-label="Validation design principles">
+        <article>
+          <small>Split rule</small>
+          <strong>No random split</strong>
+          <span>future validation requires chronological testing</span>
+        </article>
+        <article>
+          <small>Training window</small>
+          <strong>Expanding</strong>
+          <span>each fold trains on all prior labeled months</span>
+        </article>
+        <article>
+          <small>Selection metric</small>
+          <strong>Mean MAE</strong>
+          <span>RMSE, WAPE, and recent MAE used as diagnostics</span>
+        </article>
+      </section>
+
+      <section class="fold-board" aria-label="Chronological validation fold timeline">
+        <div class="section-title">
+          <p class="eyebrow">Jan-Oct labeled data</p>
+          <h2>Expanding folds mimic future prediction</h2>
+        </div>
+        <div class="month-axis" aria-hidden="true">
+          <span>Jan</span>
+          <span>Feb</span>
+          <span>Mar</span>
+          <span>Apr</span>
+          <span>May</span>
+          <span>Jun</span>
+          <span>Jul</span>
+          <span>Aug</span>
+          <span>Sep</span>
+          <span>Oct</span>
+        </div>
+        <article class="fold-row">
+          <div>
+            <strong>Validate July</strong>
+            <span>28,806 train rows -> 4,912 validation rows</span>
+          </div>
+          <div class="fold-track">
+            <i class="train" style="grid-column: 1 / 7">train</i>
+            <i class="valid" style="grid-column: 7 / 8">validate</i>
+          </div>
+        </article>
+        <article class="fold-row">
+          <div>
+            <strong>Validate August</strong>
+            <span>33,718 train rows -> 4,759 validation rows</span>
+          </div>
+          <div class="fold-track">
+            <i class="train" style="grid-column: 1 / 8">train</i>
+            <i class="valid" style="grid-column: 8 / 9">validate</i>
+          </div>
+        </article>
+        <article class="fold-row">
+          <div>
+            <strong>Validate September</strong>
+            <span>38,477 train rows -> 4,670 validation rows</span>
+          </div>
+          <div class="fold-track">
+            <i class="train" style="grid-column: 1 / 9">train</i>
+            <i class="valid" style="grid-column: 9 / 10">validate</i>
+          </div>
+        </article>
+        <article class="fold-row">
+          <div>
+            <strong>Validate October</strong>
+            <span>43,147 train rows -> 4,853 validation rows</span>
+          </div>
+          <div class="fold-track">
+            <i class="train" style="grid-column: 1 / 10">train</i>
+            <i class="valid" style="grid-column: 10 / 11">validate</i>
+          </div>
+        </article>
+        <article class="fold-row emphasis">
+          <div>
+            <strong>Validate September-October</strong>
+            <span>38,477 train rows -> 9,523 validation rows</span>
+          </div>
+          <div class="fold-track">
+            <i class="train" style="grid-column: 1 / 9">train</i>
+            <i class="valid" style="grid-column: 9 / 11">validate</i>
+          </div>
+        </article>
+      </section>
+
+      <section class="future-note" aria-label="Final hidden validation period">
+        <strong>Final prediction period:</strong>
+        <span>November 1-December 31, 2025 labels were not supplied, so hidden validation metrics are not claimed.</span>
       </section>
     </main>
   </body>
